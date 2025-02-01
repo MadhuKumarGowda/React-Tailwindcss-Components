@@ -8,26 +8,6 @@ const HomeLayout = () => {
     setExpanded(!expanded);
   };
 
-  const [resolution, setResolution] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setResolution(window.innerWidth);
-      callFunctionBasedOnResolution();
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const callFunctionBasedOnResolution = () => {
-    if (resolution < 768) {
-      setExpanded(false);
-    } else {
-      setExpanded;
-    }
-  };
-
   return (
     <>
       <section className="flex gap-6">
