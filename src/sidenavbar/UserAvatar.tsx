@@ -1,10 +1,6 @@
-import { BiLogOut } from "react-icons/bi";
-import { CgLogOut, CgMoreVertical } from "react-icons/cg";
+import { CgMoreVertical } from "react-icons/cg";
 
 const UserAvatar = ({ expanded }) => {
-  const logout = () => {
-    alert("Logout Success.");
-  }; //logout
   return (
     <>
       <img
@@ -22,12 +18,7 @@ const UserAvatar = ({ expanded }) => {
           <h4 className="font-semibold"> Madhu Kumar K S</h4>
           <span className="text-xs text-gray-600"> madhu@gmail.com</span>
         </div>
-        <BiLogOut
-          size={20}
-          className="hover:cursor-pointer"
-          title="Logout"
-          onClick={() => logout()}
-        />
+        <CgMoreVertical size={20} className="hover:cursor-pointer" />
       </div>
     </>
   );

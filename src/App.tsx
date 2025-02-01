@@ -8,6 +8,7 @@ import HomeLayout from "./layout/HomeLayout";
 import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
 import Help from "./pages/Help";
+import CartPage from "./pages/CartPage";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ const routes = createBrowserRouter(
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="statistics" element={<Reports />} />
       <Route path="help" element={<Help />} />
+      <Route path="cart" element={<CartPage />} />
     </Route>
   )
 );
