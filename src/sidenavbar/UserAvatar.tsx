@@ -1,5 +1,4 @@
 import { BiLogOut } from "react-icons/bi";
-import { CgLogOut, CgMoreVertical } from "react-icons/cg";
 
 const UserAvatar = ({ expanded }) => {
   const logout = () => {
