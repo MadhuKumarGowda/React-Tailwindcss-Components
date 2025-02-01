@@ -1,3 +1,4 @@
+import { BiLogOut, BiLogOutCircle } from "react-icons/bi";
 import { CgMoreVertical } from "react-icons/cg";
 
 const UserAvatar = ({ expanded }) => {
@@ -18,7 +19,11 @@ const UserAvatar = ({ expanded }) => {
           <h4 className="font-semibold"> Madhu Kumar K S</h4>
           <span className="text-xs text-gray-600"> madhu@gmail.com</span>
         </div>
-        <CgMoreVertical size={20} className="hover:cursor-pointer" />
+        <BiLogOutCircle
+          size={20}
+          className="hover:cursor-pointer text-red-700"
+          title="Logout"
+        />
       </div>
     </>
   );
