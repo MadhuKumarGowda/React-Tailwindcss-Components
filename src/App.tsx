@@ -1,31 +1,28 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import HomeLayout from "./layout/HomeLayout";
-import Dashboard from "./pages/Dashboard";
-import Reports from "./pages/Reports";
-import Help from "./pages/Help";
-import CartPage from "./pages/CartPage";
-
-const routes = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<HomeLayout />}>
-      <Route index element={<Dashboard />} />
-      <Route path="dashboard" element={<Dashboard />} />
-      <Route path="statistics" element={<Reports />} />
-      <Route path="help" element={<Help />} />
-      <Route path="cart" element={<CartPage />} />
-    </Route>
-  )
-);
+import { BarChartData } from "./assets/data/ChartData";
+import Chart from "./components/Chart";
 
 function App() {
+  const chartData = {
+    labels: BarChartData.map((data) => data.name),
+    datasets: [
+      {
+        label: "Expenses",
+        data: BarChartData.map((data) => data.amt),
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+        fill: true,
+      },
+    ],
+  };
   return (
     <>
-      <RouterProvider router={routes} />
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 p-10">
+        <Chart chartData={chartData} chartType="bar" />
+        <Chart chartData={chartData} chartType="line" />
+        <Chart chartData={chartData} chartType="pie" />
+        <Chart chartData={chartData} chartType="doughnut" />
+      </div>
     </>
   );
 }
