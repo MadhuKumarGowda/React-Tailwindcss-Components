@@ -1,27 +1,49 @@
-import { BarChartData } from "./assets/data/ChartData";
-import Chart from "./components/Chart";
+import CardImageBtn from "./components/CardImageBtn";
+import { dimage, mountain1, mountain2 } from "./assets/index";
+import ImageCard from "./components/ImageCard";
 
 function App() {
-  const chartData = {
-    labels: BarChartData.map((data) => data.name),
-    datasets: [
-      {
-        label: "Expenses",
-        data: BarChartData.map((data) => data.amt),
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
-        fill: true,
-      },
-    ],
-  };
   return (
     <>
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 p-10">
-        <Chart chartData={chartData} chartType="bar" />
-        <Chart chartData={chartData} chartType="line" />
-        <Chart chartData={chartData} chartType="pie" />
-        <Chart chartData={chartData} chartType="doughnut" />
+      {/* Responsive Card with image, title, description with link button */}
+      <div className="flex flex-col md:flex-row gap-5">
+        <CardImageBtn
+          title={"Card Heading"}
+          imgSrc={dimage}
+          btnLabel={"More..."}
+          btnLink={"#"}
+        >
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt nobis
+            deserunt accusantium tenetur doloremque laboriosam?
+          </p>
+        </CardImageBtn>
+
+        <CardImageBtn
+          title={"Card Heading 1"}
+          imgSrc={dimage}
+          btnLabel={"More..."}
+          btnLink={"#"}
+        >
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt nobis
+            deserunt accusantium tenetur doloremque laboriosam?
+          </p>
+        </CardImageBtn>
+      </div>
+
+      {/* Responsive ImageCard with background image, title, description with link button */}
+      <div className="flex flex-col md:flex-row gap-6 p-4">
+        <ImageCard title={"ImageBg Card 1"} bgImage={mountain1}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, earum!
+          </p>
+        </ImageCard>
+        <ImageCard title={"ImageBg Card 2"} bgImage={mountain2}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, earum!
+          </p>
+        </ImageCard>
       </div>
     </>
   );
